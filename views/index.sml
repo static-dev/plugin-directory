@@ -3,9 +3,9 @@ extends(src='layout.sml')
     h1 Reshape Plugins
 
     ul.social
-      li.github: a(href='#') github repo
-      li.gitter: a(href='#') gitter chat
-      li.docs: a(href='#') documentation
+      li.github: a(href='{{ githubUrl }}') github repo
+      li.gitter: a(href='{{ gitterUrl }}') gitter chat
+      li.docs: a(href='{{ documentationUrl }}') documentation
 
     form.search
       input.field(placeholder='search...')
@@ -25,5 +25,6 @@ extends(src='layout.sml')
           td {{ Math.round(((p.score.detail.quality + p.score.detail.maintenance) / 2) * 100) }}
           td: a(href='https://npmjs.com/~{{ p.module.publisher.username }}') {{ p.module.publisher.username }}
           td
-            a.github(href='{{ p.module.links.repository }}') gh 
-            a.npm(href='{{ p.module.links.npm }}') npm
+            .links
+              a.github(href='{{ p.module.links.repository }}') gh
+              a.npm(href='{{ p.module.links.npm }}') npm

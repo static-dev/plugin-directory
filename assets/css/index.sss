@@ -18,15 +18,30 @@ h1
   padding: 0
 
   & li
-    background: black
-    width: 30px
-    height: 30px
     text-indent: -9999px
-    border-radius: 999px
     margin-right: 15px
+
+    & a
+      display: block
+      background-color: black
+      background-position: center center
+      background-repeat: no-repeat
+      width: 30px
+      height: 30px
+      text-indent: -9999px
+      border-radius: 999px
 
     &:last-child
       margin-right: 0
+
+    &.github a
+      background-image: url('../img/github.svg')
+
+    &.gitter a
+      background-image: url('../img/gitter.svg')
+
+    &.docs a
+      background-image: url('../img/docs.svg')
 
 .search
   display: flex
@@ -67,3 +82,29 @@ table
     background: black
     color: white
     border: 1px solid #313131
+
+  & .links
+    display: flex
+
+    & a
+      display: block
+      background-color: black
+      background-position: center center
+      background-repeat: no-repeat
+      background-size: 53%
+      width: 20px
+      height: 20px
+      text-indent: -9999px
+      border-radius: 999px
+      margin-right: 6px
+
+      &.github
+        background-image: url('../img/github.svg')
+
+      &.npm
+        background-image: url('../img/npm.svg')
+        background-size: 75%
+        background-position: 50% 55%
+
+      &:last-child
+        margin-right: 0

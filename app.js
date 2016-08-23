@@ -3,8 +3,13 @@ const cssStandards = require('spike-css-standards')
 const es2016 = require('babel-preset-es2016')
 const Records = require('spike-records')
 
-const locals = {}
-const blacklist = ['reshape']
+const locals = {
+  githubUrl: 'https://github.com/reshape/reshape',
+  gitterUrl: 'https://gitter.im/reshape',
+  documentationUrl: 'https://github.com/reshape/reshape#writing-a-plugin'
+}
+
+const pluginBlacklist = ['reshape']
 
 module.exports = {
   devtool: 'source-map',
@@ -27,7 +32,7 @@ module.exports = {
         url: 'https://api.npms.io/search?term=reshape-plugin',
         transform: (res) => {
           return res.results.filter((p) => {
-            return blacklist.indexOf(p.module.name) < 0
+            return pluginBlacklist.indexOf(p.module.name) < 0
           })
         }
       }
