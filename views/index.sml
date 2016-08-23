@@ -20,10 +20,10 @@ extends(src='layout.sml')
         th Links
       each(loop='p, i of plugins')
         tr(class='p{{ i }}')
-          td: strong {{ p.module.name }}
+          td.name: a(href='{{ p.module.links.repository }}') {{ p.module.name }}
           td {{ p.module.description }}
           td {{ Math.round(((p.score.detail.quality + p.score.detail.maintenance) / 2) * 100) }}
-          td: a(href='https://npmjs.com/~{{ p.module.publisher.username }}') {{ p.module.publisher.username }}
+          td.author: a(href='https://npmjs.com/~{{ p.module.publisher.username }}') {{ p.module.publisher.username }}
           td
             .links
               a.github(href='{{ p.module.links.repository }}') gh
