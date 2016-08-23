@@ -3,9 +3,9 @@ const $ = document.querySelector.bind(document)
 const $a = document.querySelectorAll.bind(document)
 const list = plugins.map((p, i) => { p.id = `.p${i}`; return p })
 
-$('.search').onsubmit = (e) => {
-  e.preventDefault()
+$('.search').onsubmit = () => false
 
+$('.search').onkeyup = () => {
   // get the search value
   const val = $('.field').value
   const re = new RegExp(val)
