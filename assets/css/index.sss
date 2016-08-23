@@ -1,0 +1,69 @@
+@import '_global.sss'
+
+main
+  display: flex
+  flex-direction: column
+  align-items: center
+  max-width: 850px
+  margin: 0 auto
+
+h1
+  margin-bottom: 0
+
+.social
+  display: flex
+  list-style: none
+  justify-content: space-between
+  margin: 30px 0
+  padding: 0
+
+  & li
+    background: black
+    width: 30px
+    height: 30px
+    text-indent: -9999px
+    border-radius: 999px
+    margin-right: 15px
+
+    &:last-child
+      margin-right: 0
+
+.search
+  display: flex
+  width: 100%
+  margin-bottom: 30px
+
+  & .field
+    width: 100%
+    padding: 10px
+    font-size: 1.2em
+    border: 1px solid #ccc
+
+    &:focus
+      outline: 0
+
+  & input[type=submit]
+    text-indent: -9999px
+    width: 50px
+    height: 45px
+    border: 1px solid #ccc
+    border-left: none
+    background: white
+    cursor: pointer
+
+    &:focus
+      outline: 0
+
+table
+  width: 100%
+  border-collapse: collapse
+
+  & th, & td
+    padding: 10px
+    border: 1px solid #ccc
+    text-align: center
+
+  & th
+    background: black
+    color: white
+    border: 1px solid #313131
