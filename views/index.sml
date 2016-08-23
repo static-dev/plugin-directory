@@ -18,11 +18,12 @@ extends(src='layout.sml')
         th Quality
         th Author
         th Links
-      tr
-        td reshape-content
-        td A description, wow!
-        td 96
-        td jescalan
-        td
-          a.github(href='#')
-          a.npm(href='#')
+      each(loop='p of plugins')
+        tr
+          td: strong {{ p.module.name }}
+          td {{ p.module.description }}
+          td {{ Math.round(((p.score.detail.quality + p.score.detail.maintenance) / 2) * 100) }}
+          td: a(href='https://npmjs.com/~{{ p.module.publisher.username }}') {{ p.module.publisher.username }}
+          td
+            a.github(href='{{ p.module.links.repository }}') gh 
+            a.npm(href='{{ p.module.links.npm }}') npm
