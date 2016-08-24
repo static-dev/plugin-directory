@@ -1,8 +1,8 @@
 {
-  "name": "plugin-directory",
-  "description": "a template for plugin directories made by npm tags",
+  "name": "spike-plugin-directory",
+  "description": "spike plugin directory",
   "version": "0.0.1",
-  "author": "carrot",
+  "author": "Jeff Escalante",
   "ava": {
     "verbose": "true"
   },
