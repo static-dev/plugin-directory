@@ -1,6 +1,6 @@
 extends(src='layout.sml')
   block(name='content')
-    h1 Reshape Plugins
+    h1 Reshape Plugin Directory
 
     ul.social
       li.github: a(href='{{ githubUrl }}') github repo
@@ -22,11 +22,13 @@ extends(src='layout.sml')
         tr(class='p{{ i }}')
           td.name: a(href='{{ p.module.links.repository }}') {{ p.module.name }}
           td {{ p.module.description }}
-          td {{ Math.round(((p.score.detail.quality + p.score.detail.maintenance) / 2) * 100) }}
+          td.quality {{ Math.round(((p.score.detail.quality + p.score.detail.maintenance) / 2) * 100) }}
           td.author: a(href='https://npmjs.com/~{{ p.module.publisher.username }}') {{ p.module.publisher.username }}
           td
             .links
               a.github(href='{{ p.module.links.repository }}') gh
               a.npm(href='{{ p.module.links.npm }}') npm
+
+    small built with <a href=https://spike.readme.io>spike</a>
 
     script var plugins = {{{ JSON.stringify(plugins) }}}

@@ -1,5 +1,8 @@
 @import '_global.sss'
 
+strong
+  font-weight: 500
+
 main
   display: flex
   flex-direction: column
@@ -9,6 +12,7 @@ main
 
 h1
   margin: 0
+  font-weight: 100
 
 .social
   display: flex
@@ -20,10 +24,14 @@ h1
   & li
     text-indent: -9999px
     margin-right: 15px
+    transition: all .25s ease
+
+    &:hover
+      opacity: .8
 
     & a
       display: block
-      background-color: black
+      background-color: var(--black)
       background-position: center center
       background-repeat: no-repeat
       width: 30px
@@ -51,7 +59,7 @@ h1
   & .field
     width: 100%
     padding: 10px
-    font-size: 1.2em
+    font-size: 1.1em
     border: 1px solid #ccc
 
     &:focus
@@ -82,27 +90,31 @@ table
     text-align: center
 
   & th
-    background: black
+    background: var(--black)
     color: white
-    border: 1px solid #313131
+    border: 1px solid #464646
+    font-weight: 500
+
+  & td:not(.author):not(.quality)
+    text-align: left
 
   & .name a, & .author a
-    font-weight: bold
-    color: black
+    font-weight: 500
+    color: var(--black)
     text-decoration: none
     padding-bottom: 1px
     border-bottom: 1px solid transparent
     transition: all .25s ease
 
     &:hover
-      border-bottom-color: black
+      border-bottom-color: var(--black)
 
   & .links
     display: flex
 
     & a
       display: block
-      background-color: black
+      background-color: var(--black)
       background-position: center center
       background-repeat: no-repeat
       background-size: 53%
@@ -122,3 +134,18 @@ table
 
       &:last-child
         margin-right: 0
+
+small
+  margin-top: 30px
+  opacity: 0.5
+
+  & a
+    color: var(--black)
+    text-decoration: none
+    font-weight: 500
+    transition: all .25s ease
+    padding-bottom: 1px
+    border-bottom: 1px solid transparent
+
+    &:hover
+      border-bottom: 1px solid #ccc
