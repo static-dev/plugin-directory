@@ -11,7 +11,7 @@ html
       link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300')
 
     block(name='title')
-      title Reshape Plugin Directory
+      title {{ title }}
 
     block(name='stylesheets')
       link(rel='stylesheet' href='css/index.css')

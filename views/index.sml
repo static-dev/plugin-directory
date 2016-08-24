@@ -1,6 +1,6 @@
 extends(src='layout.sml')
   block(name='content')
-    h1 Reshape Plugin Directory
+    h1 {{ title }}
 
     ul.social
       li.github: a(href='{{ githubUrl }}') github repo
