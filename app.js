@@ -35,7 +35,8 @@ module.exports = {
         url: `https://api.npms.io/v2/search?q=keywords:${name}plugin`,
         transform: (res) => {
           return res.results.filter((p) => {
-            return pluginBlacklist.indexOf(p.module.name) < 0
+            if (p.flags.deprecated) return false
+            return pluginBlacklist.indexOf(p.package.name) < 0
           })
         }
       }
