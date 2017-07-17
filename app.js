@@ -1,6 +1,6 @@
-const htmlStandards = require('spike-html-standards')
+const htmlStandards = require('reshape-standard')
 const cssStandards = require('spike-css-standards')
-const es2015 = require('babel-preset-es2015')
+const jsStandards = require('spike-js-standards')
 const Records = require('spike-records')
 
 const name = 'spike'
@@ -15,19 +15,11 @@ const locals = {
 const pluginBlacklist = [name, `${name}-core`]
 
 module.exports = {
-  devtool: 'source-map',
-  matchers: {
-    html: '**/*.sgr',
-    css: '**/*.sss'
-  },
+  matchers: { html: '**/*.sgr', css: '**/*.sss' },
   ignore: ['**/layout.sgr', '**/_*', '**/.*'],
-  reshape: (ctx) => {
-    return htmlStandards({ webpack: ctx, locals })
-  },
-  postcss: (ctx) => {
-    return cssStandards({ webpack: ctx })
-  },
-  babel: { presets: [es2015] },
+  reshape: htmlStandards({ locals }),
+  postcss: cssStandards(),
+  babel: jsStandards(),
   plugins: [
     new Records({
       addDataTo: locals,
@@ -36,7 +28,6 @@ module.exports = {
         `https://api.npms.io/v2/search?q=keywords:${name}plugin&size=100`,
         transform: (res) => {
           return res.results.filter((p) => {
-            if (p.flags.deprecated) return false
             return pluginBlacklist.indexOf(p.package.name) < 0
           })
         }

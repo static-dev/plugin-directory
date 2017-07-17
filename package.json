@@ -3,26 +3,18 @@
   "description": "spike plugin directory",
   "version": "0.0.1",
   "author": "Jeff Escalante",
-  "ava": {
-    "verbose": "true"
-  },
   "bugs": "https://github.com/carrot/plugin-directory/issues",
   "dependencies": {
-    "babel-preset-es2015": "^6.13.2",
-    "babel-preset-es2016": "^6.11.3",
-    "image-webpack-loader": "^3.0.0",
-    "spike-css-standards": "^0.1.0",
-    "spike-html-standards": "^0.3.1",
-    "spike-records": "^0.4.0",
-    "webpack": "^1.13.1"
+    "reshape-standard": "^2.0.0",
+    "spike": "^2.0.2",
+    "spike-css-standards": "^2.0.1",
+    "spike-js-standards": "^2.0.2",
+    "spike-optimize": "^0.1.1",
+    "spike-records": "^2.0.0"
   },
   "devDependencies": {
-    "ava": "^0.17.0",
-    "rimraf": "^2.5.4",
-    "snazzy": "^5.0.0",
-    "spike": "^0.12.3",
-    "spike-core": "^0.12.3",
-    "standard": "^8.5.0"
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.2"
   },
   "homepage": "https://github.com/carrot/plugin-directory",
   "main": "app.js",
@@ -31,8 +23,6 @@
   "repository": "https://github.com/carrot/plugin-directory",
   "scripts": {
     "lint": "standard | snazzy",
-    "precommit": "npm run lint -s",
-    "pretest": "npm run lint -s",
-    "test": "NODE_ENV=test ava"
+    "precommit": "npm run lint -s"
   }
 }
